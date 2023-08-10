@@ -1,6 +1,8 @@
 # Projeto_OO
 Software bancário
 
+Sobre: ...
+
 Requisitos mínimos:
 
 - Cadastrar cliente;
