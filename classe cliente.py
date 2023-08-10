@@ -4,3 +4,4 @@ class Cliente:
         self.senha = senha
         self.telefone = telefone
         self.email = email
+
