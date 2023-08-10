@@ -16,7 +16,7 @@ while y == 0:
                     os.system("pause")
                     os.system("cls")
 
-                if trava == 1:
+                if trava == 1: #teste
                     print("Digite seu nome: ")
                     print("Digite sua senha")
             
