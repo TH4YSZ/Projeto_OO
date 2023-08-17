@@ -2,6 +2,7 @@ from classes import *
 import getpass
 import os
 
+
 def op_invalida():
     print("\n Opção inválida. \n")
     os.system("pause")
@@ -10,9 +11,9 @@ def op_invalida():
 y = 0
 trava = 0
 
+banco = Banco()
 #Menu
 while y == 0:
-    banco = Banco()
     cliente = Cliente()
     
     try:
