@@ -1,6 +1,8 @@
 from classe_cliente import*
+from classe_banco import*
 import getpass
 import os
+import random
 
 def op_invalida():
     print("\n Opção inválida. \n")
@@ -26,27 +28,33 @@ while y == 0:
                     os.system("cls")
                     print("Preencha as informações para acessar sua conta. \n")
                     cpf = int(input("CPF: "))
-                    senha = input("Senha: ")
-                    banco.validar_cliente_por_cpf(cpf)
-                    banco.validar_cliente_por_senha(senha)
-
-                    if banco.validar_cliente_por_cpf(cpf) == True:
-                        if banco.validar_cliente_por_senha == True:
-                            os.system("cls")
-                            op = int(input("[1] Transferência \n [2] Depósito \n [3] Saque \n [4] Alterar dados \n [5] Excluir conta \n \n Digite a opção desejada: "))
-                            match op:
-                                case 1:
-                                    print("Lógica tranferência")
-                                case 2:
-                                    print("Lógica depósito")
-                                case 3:
-                                    print("Lógica saque")
-                                case 4:
-                                    print("Lógica alt dados")
-                                case 5:
-                                    print("Lógica excluir conta")
-                                case _:
-                                    op_invalida()
+                    cliente_encontrado = banco.validar_cliente_por_cpf_e_senha(cpf, senha)
+                    
+                    if cliente_encontrado:
+                        os.system("cls")
+                        op = int(input("[1] Transferência \n [2] Depósito \n [3] Saque \n [4] Alterar dados \n [5] Excluir conta  \n [6] Voltar \n \n Digite a opção desejada: "))
+                        match op:
+                            case 1:
+                                print("Lógica tranferência")
+                            case 2:
+                                print("Lógica depósito")
+                            case 3:
+                                print("Lógica saque")
+                            case 4:
+                                os.system("cls")
+                                novo_nome = input("Digite o novo nome: ")
+                                novo_email = input("Digite o novo email: ")
+                                novo_telefone = input("Digite o novo telefone: ")
+                                novo_cpf = input("Digite o novo CPF: ")
+                                nova_senha = input("Digite a nova senha: ")
+                                nova_idade = input("Digite a nova idade: ")
+                                banco.alterar_dados_cliente(cpf, senha, novo_nome, novo_email, novo_telefone, novo_cpf, nova_senha, nova_idade)
+                            case 5:
+                                print("Lógica excluir conta")
+                            case 6:
+                                os.system("cls")
+                            case _:
+                                op_invalida()
             
             #Cadastro
             case 2:
