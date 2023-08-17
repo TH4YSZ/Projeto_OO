@@ -26,11 +26,4 @@ class Cliente:
     def get_saldo(self):
         return self.__saldo
 
-class Banco:
-    def __init__(self, nome):
-        self.clientes = []
-
-    def adicionar_cliente(self, nome, cpf, idade, telefone, email, senha):
-        cliente = Cliente(nome, cpf, idade, telefone, email, senha)
-        self.__clientes.append(cliente)
 
