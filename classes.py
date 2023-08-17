@@ -1,22 +1,28 @@
-import random
-clientes = []
 conta = 0000
+
 class Banco:
+
     def __init__(self):
         self._clientes = []
-        self._nome = ("MMALT-PAY")
-    
-    def adicionar_cliente(self):
         self._nome = ""
-        self._cpf = ""
-        self._conta = conta + 1
-        self._saldo = 0
-        self._endereço = ""
-        self._telefone = ""
-        self._idade = ""
+        self._cpf = 0
+        self._idade = 0
+        self._telefone = 0
         self._email = ""
         self._senha = ""
-        clientes.append = [{"N° da conta:": self._conta, "Nome:": self._nome, "CPF:":self._cpf, "Endereço:": self._endereço, "Telefone:": self._telefone, "Idade:": self._idade, "Email": self._email, "Senha:":self._senha }]
+    
+    def adicionar_cliente(self):
+        cliente = {
+            "Conta": conta + 1,
+            "Nome": self._nome,
+            "CPF": self._cpf,
+            "Idade": self._idade,
+            "Telefone": self._telefone,
+            "Email": self._email,
+            "Senha": self._senha,
+            "Saldo": 0
+        }
+        self._clientes.append(cliente)
 
     def setNome (self, nome):
         self._nome = nome
@@ -60,25 +66,24 @@ class Banco:
         
     def validar_cliente_por_cpf_e_senha(self, cpf, senha):
         for cliente in self._clientes:
-            if cliente.getCPF() == cpf and cliente.verificar_senha(senha):
+            if cliente["CPF"] == cpf and cliente["Senha"] == senha:
                 return cliente
-            else:
-                print("CPF ou senha incorreto.")
+        return None
         
     def excluir_conta(self):
         del self
         print("Cliente excluído com sucesso.")
 
+
     
 class Cliente:
-    def __init__(self, valor, cpf, senha, saldo, cliente_a, cliente_b):
-        self._valor = valor
-        self._cpf = cpf
-        self._senha = senha
-        self._clientes = []
-        self._saldo = saldo
-        self._cliente_b = cliente_b
-        self._cliente_a = cliente_a
+    def __init__(self):
+        self._valor = 0
+        self._cpf = 0
+        self._senha = ""
+        self._saldo = 0
+        self._cliente_b = ""
+        self._cliente_a = ""
 
     def SetValor(self, valor):
         self._valor = valor
