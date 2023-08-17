@@ -6,13 +6,13 @@ class Banco:
         self._email = email
         self._cpf = cpf
         self._senha = senha
-        self.clientes={}
+        self.clientes= []
         
     def cadastrar(self,nome,idade,telefone,email,cpf, senha):
         
         print("Para cadastrar um cliente, preencha as informações.")
         print()
-        self.clientes = input({Banco( "Nome:",nome,"Idade:",idade,"Telefone:",telefone,"Email:", email,"CPF:",cpf, "Senha:",senha)})
+        self.clientes = input([Banco( "Nome:",nome,"Idade:",idade,"Telefone:",telefone,"Email:", email,"CPF:",cpf, "Senha:",senha)])
         return self.clientes
     
     def excluir_conta(self,senha,cpf, clientes):
