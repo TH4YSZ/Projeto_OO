@@ -1,7 +1,5 @@
-conta = 0000
-
+clientes = []
 class Banco:
-
     def __init__(self):
         self._clientes = []
         self._nome = ""
@@ -13,7 +11,7 @@ class Banco:
     
     def adicionar_cliente(self):
         cliente = {
-            "Conta": conta + 1,
+            "Conta": len(self._clientes) + 1,
             "Nome": self._nome,
             "CPF": self._cpf,
             "Idade": self._idade,
@@ -154,4 +152,4 @@ class Cliente:
                 print ("Usuário não encontrado")
         else:
             print ("Usuário não encontrado")
-            
+     6       
