@@ -2,6 +2,11 @@ from classe_cliente import*
 import getpass
 import os
 
+def op_invalida():
+    print("\n Opção inválida. \n")
+    os.system("pause")
+    os.system("cls")
+
 y = 0
 trava = 0
 
@@ -18,8 +23,30 @@ while y == 0:
                     os.system("cls")
 
                 if trava == 1: #teste
-                    print("Digite seu nome: ")
-                    print("Digite sua senha")
+                    os.system("cls")
+                    print("Preencha as informações para acessar sua conta. \n")
+                    cpf = int(input("CPF: "))
+                    senha = input("Senha: ")
+                    banco.validar_cliente_por_cpf(cpf)
+                    banco.validar_cliente_por_senha(senha)
+
+                    if banco.validar_cliente_por_cpf(cpf) == True:
+                        if banco.validar_cliente_por_senha == True:
+                            os.system("cls")
+                            op = int(input("[1] Transferência \n [2] Depósito \n [3] Saque \n [4] Alterar dados \n [5] Excluir conta \n \n Digite a opção desejada: "))
+                            match op:
+                                case 1:
+                                    print("Lógica tranferência")
+                                case 2:
+                                    print("Lógica depósito")
+                                case 3:
+                                    print("Lógica saque")
+                                case 4:
+                                    print("Lógica alt dados")
+                                case 5:
+                                    print("Lógica excluir conta")
+                                case _:
+                                    op_invalida()
             
             #Cadastro
             case 2:

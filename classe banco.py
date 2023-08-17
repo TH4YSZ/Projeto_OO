@@ -1,7 +1,13 @@
 class Banco:
-    def __init__(self):
-        self.clientes = []
-
+    def __init__(self, nome, idade, telefone, email, cpf, senha):
+        self._nome = nome
+        self._idade = idade
+        self._telefone = telefone
+        self._email = email
+        self._cpf = cpf
+        self._senha = senha
+        self.clientes= []
+    
     def adicionar_cliente(self, nome, cpf, idade, telefone, email, senha):
         cliente = Cliente(nome, cpf, idade, telefone, email, senha)
         self.__clientes.append(cliente)
