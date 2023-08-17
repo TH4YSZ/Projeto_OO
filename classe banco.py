@@ -37,3 +37,38 @@ class Banco:
                 print ("Senha Inválida")
         else:
             print("CPF Inválido")
+
+
+class Banco:
+
+    def __init__(self):
+        self._titulares = []
+
+    def adicionartitular (self, nometitular, senha, cpf, datadenasci):
+        titular = ({"Nome:" : nometitular, "Senha:": senha, "CPF:" : cpf, "Data de Nascimento:": datadenasci})
+        self._titulares.append (titular)
+        print(f"{nometitular} adicionado(a) ao banco.")
+    
+    def excluirtitular (self, cpf):
+        titulares_removidos = [titular for titular in self._titulares if titular['CPF'] == cpf]
+        if titulares_removidos:
+            self.pessoas = [titular for titular in self._titulares if titular['CPF'] != cpf]
+            print(f"{cpf} removido(a) da lista de pessoas.")
+        else:
+            print(f"Titular do CPF: {cpf} não encontrado(a) na lista do banco.")
+
+
+# Menu inicial:
+
+# Fazer login -> cpf e senha
+# Criar conta -> nome, cpf, senha, data de nascimento
+# Sair
+
+# Menu depois de ter feito o login:
+
+# Excluir Conta -> cpf e senha
+# Alterar Conta -> O que você deseja alterar?  nome, cpf, senha, data de nascimento
+# Depositar -> 
+# Sacar 
+# Transferir
+# Sair
