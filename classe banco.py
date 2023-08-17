@@ -7,13 +7,6 @@ class Banco:
         self._cpf = cpf
         self._senha = senha
         self.clientes= []
-        
-    def cadastrar(self,nome,idade,telefone,email,cpf, senha):
-        
-        print("Para cadastrar um cliente, preencha as informações.")
-        print()
-        self.clientes = input([Banco( "Nome:",nome,"Idade:",idade,"Telefone:",telefone,"Email:", email,"CPF:",cpf, "Senha:",senha)])
-        return self.clientes
     
     def adicionar_cliente(self, nome, cpf, idade, telefone, email, senha):
         cliente = Cliente(nome, cpf, idade, telefone, email, senha)
