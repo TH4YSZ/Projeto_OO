@@ -1,31 +1,13 @@
 class Banco:
-    def __init__(self, nome, idade, telefone, email, cpf, senha):
-        self._nome = nome
-        self._idade = idade
-        self._telefone = telefone
-        self._email = email
-        self._cpf = cpf
-        self._senha = senha
-        self.clientes= []
-        
-    def cadastrar(self,nome,idade,telefone,email,cpf, senha):
-        
-        print("Para cadastrar um cliente, preencha as informações.")
-        print()
-        self.clientes = input([Banco( "Nome:",nome,"Idade:",idade,"Telefone:",telefone,"Email:", email,"CPF:",cpf, "Senha:",senha)])
-        return self.clientes
-    
+    def __init__(self):
+        self.clientes = []
+
     def adicionar_cliente(self, nome, cpf, idade, telefone, email, senha):
         cliente = Cliente(nome, cpf, idade, telefone, email, senha)
         self.__clientes.append(cliente)
 
-    def adicionartitular (self, nometitular, senha, cpf, datadenasci):
-        titular = ({"Nome:" : nometitular, "Senha:": senha, "CPF:" : cpf, "Data de Nascimento:": datadenasci})
-        self._titulares.append (titular)
-        print(f"{nometitular} adicionado(a) ao banco.")
 
-
-    def excluir_conta(self,senha,cpf, clientes):
+    def excluir_conta(self, senha, cpf, clientes):
         print ("Para excluir sua conta, preencha as seguintes informações:")
         x = int (input("Cpf:"))
         y = int (input("Senha:"))

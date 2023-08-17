@@ -63,7 +63,9 @@ while y == 0:
                 op_invalida()
 
     except Exception as erro:
-        op_invalida()
+        print("\n Opção inválida. \n")
+        os.system("pause")
+        os.system("cls")
 
 def op_invalida():
     print("\n Opção inválida. \n")
