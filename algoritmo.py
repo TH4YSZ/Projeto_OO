@@ -1,5 +1,4 @@
-from classe_cliente import*
-from classe_banco import*
+from classes import*
 import getpass
 import os
 import random
@@ -12,7 +11,7 @@ def op_invalida():
 y = 0
 trava = 0
 
-banco = Banco("MMALT-PAY")
+banco = Banco()
 #Menu
 while y == 0:
     try:
@@ -28,6 +27,7 @@ while y == 0:
                     os.system("cls")
                     print("Preencha as informações para acessar sua conta. \n")
                     cpf = int(input("CPF: "))
+                    senha = input("Senha: ")
                     cliente_encontrado = banco.validar_cliente_por_cpf_e_senha(cpf, senha)
                     
                     if cliente_encontrado:
@@ -68,7 +68,7 @@ while y == 0:
                     telefone = input("Telefone: ")
                     email = input("Email: ")
                     senha = getpass.getpass("Digite sua senha: ")
-                    banco.adicionar_cliente(nome, cpf, idade, telefone, email, senha)
+                    banco.cadastrar_cliente(nome, cpf, idade, telefone, email, senha)
 
                     if idade < 18:
                         print("\nDesculpe, você não pode ter uma conta se for menor de 18 anos.")
