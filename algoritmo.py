@@ -2,6 +2,11 @@ from classe_cliente import*
 import getpass
 import os
 
+def op_invalida():
+    print("\n Opção inválida. \n")
+    os.system("pause")
+    os.system("cls")
+
 y = 0
 trava = 0
 
@@ -64,8 +69,3 @@ while y == 0:
 
     except Exception as erro:
         op_invalida()
-
-def op_invalida():
-    print("\n Opção inválida. \n")
-    os.system("pause")
-    os.system("cls")
