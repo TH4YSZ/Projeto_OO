@@ -25,16 +25,34 @@ while y == 0:
                 try:
                     trava = 1
                     os.system("cls")
-                    nome = input("Digite seu nome: ")
-                    telefone = input("Digite seu número de telefone: ")
-                    email = input("Digite seu email: ")
-                    senha = input("Digite sua senha: ")
-                    cliente = Cliente(nome, telefone, email, senha)
-                    banco.adicionar_cliente(nome, telefone, email, senha)
+                    print("Preencha as informações abaixo \n")
+                    nome = input("Nome: ")
+                    cpf = int(input("CPF: "))
+                    idade = int(input("Idade: "))
+                    telefone = input("Telefone: ")
+                    email = input("Email: ")
+                    senha = getpass.getpass("Digite sua senha: ")
+                    banco.adicionar_cliente(nome, cpf, idade, telefone, email, senha)
 
-                    print("Usuário cadastrado com sucesso!")
-                    os.system("pause")
-                    os.system("cls")
+                    if idade < 18:
+                        print("\nDesculpe, você não pode ter uma conta se for menor de 18 anos.")
+                        
+                    else:
+                        print("\nUsuário cadastrado com sucesso!")
+                    op = int(input("\n [1] Voltar \n [2] Sair \n \nDigite a opção desejada: ")) #Opções para voltar/sair do software.
+
+                    if op == 1: #Voltar
+                        y = 0
+    
+                        os.system("cls")
+
+                    elif op == 2: #Sair
+                        y = 1
+                      
+
+                    else: #Opção inválida
+                        op_invalida()
+                           
                 except Exception in erro:
                     op_invalida()
             case 3:
